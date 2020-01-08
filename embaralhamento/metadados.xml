@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recurso>
+    <titulo>Embaralhando imagens</titulo>
+    <descricao>Partindo de um exemplo simples, um quebra-cabeças com 9 peças, exploramos o conceito de permutação, não do ponto de vista de contagem, mas da sua estrutura interna de ciclos. A partir dessa estrutura, vemos o que se pode aprender sobre a ordem da permutação, ou seja, sobre o número de vezes que ela tem de ser repetida para se retornar a posição inicial.</descricao>
+    <estado>finalizado</estado>
+	<imagem>emb.jpg</imagem>
+	<tipo>Animação e Simulação, Software Educacional</tipo>
+	<objetivos>Analisar permutações de elementos do ponto de vista de sua estrutura interna; Introduzir de maneira sutil a noção de grupo de permutação; Resolver um problema que envolve e dá signiﬁcado ao conceito de mínimo múltiplo comum.</objetivos>
+	<observacoes>É necessário plugin Flash 9.0 e navegador moderno.</observacoes>
+	<nivel>Ensino Médio</nivel>
+	<componente>Matemática</componente>
+	<temas>Geometria e Medidas</temas>
+	<autores>Marcelo Firer</autores>
+	<palavras_chaves>Unicamp, Projeto M³, software educacional, matemática, embaralhamento, permutações, grupo, mmc</palavras_chaves>
+	<assunto>Permutações; Funções bĳetoras; Mínimo Múltiplo Comum;Números primos, Teorema Fundamental da Aritmética.</assunto>
+</recurso>

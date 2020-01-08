@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		
+		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
+		<link rel="alternate stylesheet" type="text/css" href="css/estilo2.css" media="screen, projection" title="grande" />
+		
+		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
+		<!--[if IE 7]>
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
+		<![endif]-->
+		<!--[if lte IE 6]>	
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
+		<![endif]-->
+		
+		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/popup.js"></script>
+		<script type="text/javascript" src="scripts/notas.js"></script>
+		<script type="text/javascript" src="scripts/bloco.js"></script>
+		<script type="text/javascript" src="scripts/calculadora.js"></script>
+		<script type="text/javascript" src="scripts/rolagem.js"></script>
+		<script type="text/javascript" src="scripts/interface.js"></script>
+		<script type="text/javascript" src="scripts/referencias.js"></script>
+		
+		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
+		<!-- O arquivo inputs.js deve ser incluído por último -->
+		
+		<script type="text/javascript" src="scripts_embaralhamento/correcao_desafio.js"></script>
+		<script type="text/javascript" src="scripts_embaralhamento/conteudo_desafio.js"></script>
+		<script type="text/javascript" src="scripts_embaralhamento/geral.js"></script>
+		<script type="text/javascript" src="scripts/inputs.js"></script>
+		<script type="text/javascript">
+			
+			var PosicaoAtual = {Atividade: 4, Parte: 0};
+			var ProximaParte = 'atividade4_parte2.html';
+			
+			var Popups = $H({
+				link_continuar: {
+					conteudo: 'Você não pode continuar, enquanto não acertar todas as questões.',
+					layout: ['seta_baixo', 'direita'],
+					largura: 11
+				}
+			});
+			
+		</script>
+		
+		
+		<title>Embaralhando imagens</title>
+	</head>
+	<body onunload="">
+	<!--
+	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
+	Veja um exemplo no arquivo exemplo_correcao.js
+	-->
+		<div id="container">
+			<div id="cabecalho">
+				<div id="onde_estou">
+					<div class="desafio"></div>
+					<h1>Embaralhando imagens</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Desafio</h2>
+				</div>
+				<div id="logo"></div>
+				<div id="links">
+					<a href="mapa.html">Mapa</a>
+					<a href="introducao.html">Introdução</a>
+					<a href="index.html">Início</a>
+				</div>
+				
+				<div class="limpador"></div>
+			</div>
+			<!-- Por enquanto o controle de partes trancadas não será implementado-->
+			<ul id="partes">
+			</ul>
+			
+			<div id="software">
+				<div id="conteudo">
+					<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
+						<param name="menu" value="false" />
+						<param name="movie" value="applets/SalvaLocal.swf" />
+					</object>
+					
+					<div id="questoes">
+					
+						<!--
+						Para o Script se localizar, essa div "texto_genérico" é necessária. Caso não tenha texto aqui, deixe ela vazia.
+						Coloque aqui qualquer texto genérico de instruções e teoria.
+						-->
+						<div id="texto_generico">
+							<p>Agora que você já sabe que o número mínimo de embaralhadas necessárias para que as cartas retornem à posição original é o <strong>mmc</strong> entre os tamanhos dos ciclos, tente inverter essa lógica.</p>
+							<p>Se você soubesse de antemão o número de embaralhadas necessárias para se retornar à posição original, conseguiria calcular o tamanho de cada ciclo?</p>
+						</div>
+						
+						<!-- Aqui vão ser colocadas as questões, via JavaScript.-->
+						
+						<div id="parte1_q1"></div>
+						<div id="parte1_q2"></div>
+						
+						<p><em>Na próxima parte, você será desafiado a descobrir as características dos ciclos de um novo embaralhamento, mas, desta vez, diferentemente das questões anteriores, você não saberá de antemão a regra de formação. Será que você consegue?</em></p>
+						
+						<a href="javascript:" id="corrigir_tudo">Corrigir todas as questões</a>
+						<a id="link_continuar">
+							<span class="escondido">Continuar</span>
+						</a>
+						<div class="limpador"></div>
+					</div>
+					<div style="height:100px;"></div>
+				</div>
+			</div>
+			<br class="limpador" />
+			<div id="rodape">
+				<a href="http://m3.mat.br" target="_blank">Sobre o Matemática Multimídia</a>
+			</div>
+		</div>
+		<div id="applet">
+			<div id="borda_applet" class="altura_applet_3 borda sem_fundo">
+				
+				<div class="a_esquerda">
+				
+					<div id="dispensa" class="a_esquerda" style="background:url(imgs/fundo1.gif); margin-left:10px; margin-top: 40px;">
+						<div id="disp01" class="a_esquerda" style="border-top:1px dashed black; border-left:1px dashed black; height:56px; width:74px;">
+							<div class="a_esquerda resp resp01" style="height:56px; width:74px;" id="resp01">
+								<img src="imgs/pateta1.gif" />
+							</div>
+						</div>
+						<div id="disp02" class="a_esquerda" style="background:url(imgs/fundo2.gif); border-top:1px dashed black; border-left:1px dashed black; height:56px; width:74px;">
+							<div class="a_esquerda resp resp02" style="height:56px; width:74px;" id="resp02">
+								<img src="imgs/pateta2.gif" />
+							</div>
+						</div>
+						<div id="disp03" class="a_esquerda" style="background:url(imgs/fundo3.gif); border-top:1px dashed black; border-left:1px dashed black; border-right:1px dashed black; height:56px; width:74px;">
+							<div class="a_esquerda resp resp03" style="height:56px; width:76px;" id="resp03">
+								<img src="imgs/pateta3.gif" />
+							</div>
+						</div>
+						
+						
+						<br class="limpador" />
+						
+						<div id="disp04" class="a_esquerda" style="background:url(imgs/fundo4.gif); border-top:1px dashed black; border-left:1px dashed black; height:56px; width:74px;">
+							<div class="a_esquerda resp resp04" style="height:56px; width:74px;" id="resp04">
+								<img src="imgs/pateta4.gif" />
+							</div>
+						</div>
+						
+						<div id="disp05" class="a_esquerda" style="background:url(imgs/fundo5.gif); border-top:1px dashed black; border-left:1px dashed black; height:56px; width:74px;">
+							<div class="a_esquerda resp resp05" style="height:56px; width:74px;" id="resp05">
+								<img src="imgs/pateta5.gif" />
+							</div>
+						</div>
+						<div id="disp06" class="a_esquerda" style="background:url(imgs/fundo6.gif); border-top:1px dashed black; border-left:1px dashed black; border-right:1px dashed black; height:56px; width:74px;">
+							<div class="a_esquerda resp resp06" style="height:56px; width:76px;" id="resp06">
+								<img src="imgs/pateta6.gif" />
+							</div>
+						</div>
+						
+						
+						<br class="limpador" />
+						
+						<div id="disp07" class="a_esquerda" style="background:url(imgs/fundo7.gif); border-top:1px dashed black; border-left:1px dashed black; border-bottom:1px dashed black; height:56px; width:74px;">
+							<div class="a_esquerda resp resp07" style="height:56px; width:74px;" id="resp07">
+								<img src="imgs/pateta7.gif" />
+							</div>
+						</div>
+						<div id="disp08" class="a_esquerda" style="background:url(imgs/fundo8.gif); border-top:1px dashed black; border-left:1px dashed black; border-bottom:1px dashed black; height:56px; width:74px;">
+							<div class="a_esquerda resp resp08" style="height:56px; width:74px;" id="resp08">
+								<img src="imgs/pateta8.gif" />
+							</div>
+						</div>
+						
+						<div id="disp09" class="a_esquerda" style="background:url(imgs/fundo9.gif); border-top:1px dashed black; border-left:1px dashed black; border-bottom:1px dashed black; border-right:1px dashed black; height:56px; width:74px; ">
+							<div class="a_esquerda resp resp09" style="height:56px; width:76px;" id="resp09">
+								<img src="imgs/pateta9.gif" />
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="a_esquerda"  style="margin-left:20px; margin-top:40px; width: 140px; height:auto;">
+					<div style="font-weight:bold;"> Ordenação</div>
+					<div id="ordem1" style="float:left; width:120px; margin-top:10px;"></div>
+				</div>
+
+				
+				<br class="limpador" />
+				
+				<div style="margin-top:20px; margin-left:10px;">
+					<span><strong>Contador: </strong><span id="contador">0</span></span>
+				</div>
+				
+				
+				<div class="canto sup_esq"></div>
+				<div class="canto sup_dir"></div>
+				<div class="canto inf_esq"></div>
+				<div class="canto inf_dir"></div>
+				<div id="associacao"></div>
+			</div>
+			<div id="comandos">
+				<input id="grade" type="checkbox" /> <label for="grade" style="margin-right:5px;">Grade</label>
+				<input id="embaralhar" 	type="button" class="botao botao_enorme" onclick="embaralhar();" value="Embaralhar" />
+				<input id="zerar" 		type="button" class="botao botao_enorme" onclick="resetar();" value="Zerar embaralhamento" />
+			</div>
+		</div>
+		
+		<div id="associado"></div>
+		
+		
+		<div id="ferramentas">
+			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:setActiveStyleSheet('grande');" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+		</div>
+		<div id="calc" class="escondido"></div>
+		<script type="text/javascript">
+			var ciclo = [8,5,6,2,4,7,9,1,3];
+			var contador = 0;
+			var anterior = '';
+			
+			
+			Event.observe(window, 'load', function()
+			{
+				atualizaOrdem();
+				$R('resp01', 'resp09').each(function(el)
+				{
+					Event.observe($(el), 'click', function()
+					{
+						if (anterior)
+						{
+							$(anterior).setStyle({border: 'none', overflow: 'visible', height: '56px', width: '74px'});
+							$(anterior).firstDescendant().setStyle({margin: '0', overflow: 'visible'});
+						}
+						if (anterior != el)
+						{
+							anterior = el;
+							$(el).setStyle({border: '3px solid #F00', overflow: 'hidden', height: '50px', width: '68px'});
+							$(el).firstDescendant().setStyle({margin: '-3px', overflow: 'hidden'});
+						}
+						else
+						{
+							anterior = '';
+						}
+					});
+					
+					$(el).setStyle({
+						cursor: 'pointer'
+					});
+				});
+			});
+			
+			function embaralhar()
+			{
+				for(a = 0; a < ciclo.length; a++)
+				{
+					resp = 'disp0'+ciclo[a];
+					base = 'disp0'+(a+1);
+					$(resp).insert($(base).firstDescendant());
+				}
+				$('contador').update(++contador);
+			}
+			
+			function atualizaOrdem()
+			{
+				$('ordem1').update('');
+				for(a = 0; a < ciclo.length; a++)
+				{	
+					resp = ciclo[a];
+					base = a+1;
+					$('ordem1').insert('<p>0'+base+'<em> -> </em>0'+resp+'</p>');
+				}
+			}
+			
+			function resetar()
+			{
+				$('contador').update(contador = 0);
+				
+				$R('01', '09').each(function(num)
+				{
+					$('disp'+num).insert($('resp'+num));
+				});
+			}
+		</script>
+	</body>
+</html>
