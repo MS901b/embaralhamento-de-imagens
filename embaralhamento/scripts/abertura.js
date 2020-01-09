@@ -80,6 +80,14 @@ function analisaAmbiente()
 		}
 
 	}
+	if (BrowserDetect.OS=="Android")
+	{
+		var conteudo = '<p><strong>Dispositivo não suportado</strong></p><p>Dispositivo mobile não é recomendado para utilizar este software, para usar este software você precisa utilizar um computador.</p>';
+		conteudo += '<p style="float:right;"><a href="detect.html">Ver relatório de compatibilidade completo</a></p><br class="limpador" />';
+		conteudo += '<p><a id="fechar_desesperado" style="float:right; href="#">Fechar</a><a id="continuar_mesmo_assim" style="float:right; margin-right:10px;"" href="#">Continuar mesmo assim</a>';
+		var tmp = new PopupDesesperados(conteudo, 20);
+		return;
+	}
 	//Flash e java não são mais necessarios
 	/*if (!hasReqestedVersion)
 	{
