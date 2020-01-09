@@ -70,7 +70,7 @@ function analisaAmbiente()
 
 	if (!(BrowserDetect.browser=='Firefox' && BrowserDetect.version>=68))
 	{
-		if (!(BrowserDetect.browser=='Chrome' && BrowserDetect.version>=80))
+		if (!(BrowserDetect.browser=='Chrome' && BrowserDetect.version>=75))
 		{
 			var conteudo = '<p><strong>Erro de compatibilidade – Navegador</strong></p><p>O seu navegador não é compatível com este software, para usar este software você precisa ter um dos seguintes navegadores de internet: </p><p>1. Chrome 75+ (mais recomendado)<br />2. Firefox 68.0+';
 			conteudo += '<p style="float:right;"><a href="detect.html">Ver relatório de compatibilidade completo</a></p><br class="limpador" />';
