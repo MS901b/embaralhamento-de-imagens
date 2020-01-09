@@ -65,7 +65,7 @@
 							<p> Sua versão: </p>
 							<p><span id="browserOsInst"></span></p>
 							<p id="instnav"></p>
-							<p id="firefox"></p>
+							<p id="Chrome"></p>
 						</div>
 
 						<!--
@@ -151,9 +151,9 @@
 			} else {
 				if ((BrowserDetect.browser=='Chrome' && BrowserDetect.version>=75)) {
 					browser = 1;
-				}
+				}/*
 				else {
-					/*
+
 					if ((BrowserDetect.browser=='Opera') && (BrowserDetect.version>=9)) {
 						browser = 1;
 						opera = 1;
@@ -164,8 +164,8 @@
 							browser = 1;
 							safari = 1;
 						}
-					}*/
-				}
+					}
+				}*/
 
 			}
 
@@ -173,7 +173,7 @@
 			if (browser == 0)
 			{
 				$('instnav').update('Instale o Chrome:');
-				$('firefox').update('<a href="https://www.google.com/chrome/">Google Chrome</a>');
+				$('Chrome').update('<a href="https://www.google.com/chrome/">Google Chrome</a>');
 			}
 
 			//Não precisa de Java nem de Flash
