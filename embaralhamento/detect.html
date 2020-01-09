@@ -59,14 +59,16 @@
 								O software funciona corretamente nos seguintes navegadores de internet:
 							</p>
 							<p>
-								1. Firefox 3.0+; (recomendado) <br />
-								2. Internet Explorer 7.0+; <br />
+								1. Chrome 75+ (mais recomendado) <br />
+								2. Firefox 68.0+; <br />
 							</p>
 							<p> Sua versão: </p>
 							<p><span id="browserOsInst"></span></p>
 							<p id="instnav"></p>
 							<p id="firefox"></p>
 						</div>
+
+						<!--
 						<div class="coluna">
 							<h2>Java Virtual Machine</h2>
 							<p>É preciso que esteja instalada no sistema a seguinte versão do Java:</p>
@@ -76,6 +78,7 @@
 							<p id="instjava"></p>
 							<p id="java"></p>
 						</div>
+
 						<div class="coluna">
 							<h2>Adobre Flash Player</h2>
 							<p>A seguinte versão é necessária:</p>
@@ -85,6 +88,7 @@
 							<p id="instflash"></p>
 							<p id="flash"></p>
 						</div>
+						-->
 
 						<br class="limpador">
 
@@ -121,7 +125,8 @@
 			var browser=navigator.appName;
 			var b_version=navigator.appVersion;
 
-			var flashRequiredMajorVersion = 9.0;
+			//Não precisa mais de flash nem java
+			/*var flashRequiredMajorVersion = 9.0;
 			var flashRequiredMinorVersion = 0;
 			var flashRequiredRevision = 0;
 
@@ -133,6 +138,7 @@
 
 			$('verJavaInst').innerHTML=deployJava.getJREs();
 			$('verJavaReq').innerHTML=javaRequiredVersion;
+			*/
 
 			$('browserOsInst').innerHTML = BrowserDetect.browser + ' ' + BrowserDetect.version + ' em ' + BrowserDetect.OS ;
 
@@ -140,10 +146,10 @@
 			var browser = 0;
 			var safari = 0;
 			var opera = 0;
-			if ((BrowserDetect.browser=='Firefox') && (BrowserDetect.version>=3)) {
+			if ((BrowserDetect.browser=='Firefox' && BrowserDetect.version>=68)) {
 				browser = 1;
 			} else {
-				if ((BrowserDetect.browser=='Internet Explorer') && (BrowserDetect.version>=7)) {
+				if ((BrowserDetect.browser=='Chrome' && BrowserDetect.version>=75)) {
 					browser = 1;
 				}
 				else {
@@ -166,12 +172,12 @@
 
 			if (browser == 0)
 			{
-				$('instnav').update('Instale o Firefox:');
-				$('firefox').update('<a href="http://www.mozilla.com/firefox">Mozilla Firefox</a>');
+				$('instnav').update('Instale o Chrome:');
+				$('firefox').update('<a href="https://www.google.com/chrome/">Google Chrome</a>');
 			}
 
-
-			var flash = 0;
+			//Não precisa de Java nem de Flash
+			/*var flash = 0;
 			if (hasReqestedVersion) {
 				flash = 1;
 			}
@@ -188,6 +194,7 @@
 				java = 1;
 			}
 
+
 			if (safari || opera)
 				java = 1;
 
@@ -195,9 +202,9 @@
 			{
 				$('instjava').update('Instale a JVM:');
 				$('java').update('<a href="http://www.java.com">Java Virtual Machine<a/>');
-			}
+			}*/
 
-			if (java == 1 && flash == 1 && browser == 1)
+			if (browser == 1)
 			{
 				$('erro').update('O seu sistema é compatível, aproveite as atividades!');
 				$('erro').setStyle({color: 'RGB(0,124,0)'});
