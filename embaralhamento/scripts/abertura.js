@@ -43,6 +43,22 @@ var FichaTecnica = Class.create({
 	}
 });
 
+function detectar_mobile() {
+	if( navigator.userAgent.match(/Android/i)
+	|| navigator.userAgent.match(/webOS/i)
+	|| navigator.userAgent.match(/iPhone/i)
+	|| navigator.userAgent.match(/iPad/i)
+	|| navigator.userAgent.match(/iPod/i)
+	|| navigator.userAgent.match(/BlackBerry/i)
+	|| navigator.userAgent.match(/Windows Phone/i)
+	){
+			return true;
+	 }
+	else {
+			return false;
+	 }
+}
+
 function analisaAmbiente()
 {
 	/*var flashRequiredMajorVersion = 9.0;
@@ -80,7 +96,7 @@ function analisaAmbiente()
 		}
 
 	}
-	if (BrowserDetect.OS=="Android")
+	if (detectar_mobile())
 	{
 		var conteudo = '<p><strong>Dispositivo não suportado</strong></p><p>Dispositivo mobile não é recomendado para utilizar este software, para usar este software você precisa utilizar um computador.</p>';
 		conteudo += '<p style="float:right;"><a href="detect.html">Ver relatório de compatibilidade completo</a></p><br class="limpador" />';
