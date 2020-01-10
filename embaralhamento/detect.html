@@ -176,6 +176,11 @@
 				$('Chrome').update('<a href="https://www.google.com/chrome/">Google Chrome</a>');
 			}
 
+			if (BrowserDetect.OS == "Android")
+			{
+				$('instnav').update('Acesse o site pelo computador ou notebook');
+			}
+
 			//Não precisa de Java nem de Flash
 			/*var flash = 0;
 			if (hasReqestedVersion) {
@@ -204,7 +209,7 @@
 				$('java').update('<a href="http://www.java.com">Java Virtual Machine<a/>');
 			}*/
 
-			if (browser == 1)
+			if (browser == 1 && BrowserDetect.OS != "Android")
 			{
 				$('erro').update('O seu sistema é compatível, aproveite as atividades!');
 				$('erro').setStyle({color: 'RGB(0,124,0)'});
