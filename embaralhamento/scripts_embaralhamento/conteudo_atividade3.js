@@ -19,7 +19,6 @@ var IdPadrao = [['parte/parte','q/questao','/itemletra','/subitem'],'_'];
 */
 
 var Partes = ['1', '2', '3', '4', '5'];
-var nomeSoft="Embaralhamento";
 
 var Questoes = 
 [

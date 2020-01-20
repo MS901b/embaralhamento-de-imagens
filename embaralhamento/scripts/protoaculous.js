@@ -4694,8 +4694,10 @@ Form.EventObserver = Class.create(Abstract.EventObserver, {
   }
 
   if (document.addEventListener) {
+    console.log("TESTE1")
     document.addEventListener('DOMContentLoaded', fireContentLoadedEvent, false);
   } else {
+    console.log("Teste2")
     document.observe('readystatechange', checkReadyState);
     if (window == top)
       timer = pollDoScroll.defer();
@@ -7330,7 +7332,3 @@ function montaShimmer(pos)
 	return el;
 }
 
-function flashOnInit(applet)
-{
-	document.fire('flash:'+applet);
-}

@@ -13,6 +13,7 @@
 		
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
 		<script type="text/javascript" src="scripts/notas.js"></script>
 		<script type="text/javascript" src="scripts/bloco.js"></script>
@@ -29,12 +30,11 @@
 		
 		<script type="text/javascript">
 			var PosicaoAtual = {Atividade: 0, Parte: 0};
-			
-			document.observe('dom:safeLoaded', function(a)
-			{
-				if(['1','2','3'].indexOf($('SalvaLocal').Pega(nomeSoft, 'imagem_escolhida')) == -1)
+
+			if(['1','2','3'].indexOf($('SalvaLocal').Pega(nomeSoft, 'imagem_escolhida')) == -1)
 					$('SalvaLocal').Salva(nomeSoft, 'imagem_escolhida', '3');
-				
+
+			document.observe('readystatechange', function() {
 				$('imgs_abertura').select('a').each(function(imagem)
 				{
 					Event.observe(imagem, 'click', function(ev)
@@ -88,10 +88,6 @@
 			
 			<div id="abertura">
 				<div id="conteudo">
-					<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
-						<param name="menu" value="false" />
-						<param name="movie" value="applets/SalvaLocal.swf" />
-					</object>
 					
 					<div id="texto_abertura">
 						<p>Com este software, você irá se familiarizar com as chamadas “regras de embaralhamento”, e também com algumas de suas propriedades. Aqui, os embaralhamentos não serão aleatórios, mas sim permutações bem definidas na ordem dos objetos, as quais podem ser descritas mediante regras de formação simples.</p>

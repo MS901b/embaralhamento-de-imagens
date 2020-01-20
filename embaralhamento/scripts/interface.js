@@ -2,7 +2,6 @@ var PopupReferencias = null;
 var BlocoNotas = null;
 var CorrigeTudoPopup;
 var Calculadora;
-var nomeSoft;
 var Partes;
 
 var Referencias = new Array();
@@ -12,7 +11,7 @@ var Alertou = false, iQuestao = 0;
 var incorreta = null;
 
 var corrigindo = false;
-var interface_salva_local_loaded = false;
+var interface_salva_local_loaded = true;
 var interface_document_loaded = false;
 
 var Letras = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','W','Y','Z'];
@@ -39,7 +38,7 @@ Event.observe(window, 'load', function()
 		$('link_acessibilidade').href = 'javascript:setActiveStyleSheet("grande");';
 	}
 });
-
+	
 Event.observe(document, 'flash:SalvaLocal', function(ev)
 {
 	interface_salva_local_loaded = true;
@@ -51,6 +50,7 @@ Event.observe(document, 'flash:SalvaLocal', function(ev)
 
 document.observe("dom:loaded", function()
 {
+	gerencia_partes();
 	var protocol = window.location.protocol;
 	if (protocol != 'http:' && protocol != 'https:')
 	{
@@ -1832,6 +1832,8 @@ function dispara_safe_loaded()
 
 function gerencia_partes()
 {
+	console.log('interface_salva_local_loaded', interface_salva_local_loaded)
+	interface_salva_local_loaded = true
 	if(!(interface_salva_local_loaded && interface_document_loaded)) return;
 	
 	if(nomeSoft == null)

@@ -1,5 +1,5 @@
 var window_loaded = false;
-var flash_loaded = false;
+var flash_loaded = true;
 
 Event.observe(window, 'load', function()
 {
@@ -129,7 +129,7 @@ var parte_3 = new (Class.create({
 		$('trava_embaralhamento').hide();
 		
 		var permuta_escolhida = $('SalvaLocal').Pega(nomeSoft, 'valor_inicial_a2p3');
-		if(typeof permuta_escolhida == 'object')
+		if(typeof permuta_escolhida == 'object' && permuta_escolhida != null)
 			if(this.permuta.setPermuta(permuta_escolhida))
 				this.set_inicial();
 	},
@@ -244,7 +244,7 @@ var parte_4 = new (Class.create({
 	ajusta: function()
 	{
 		var resp = $('SalvaLocal').Pega(nomeSoft, 'a2_p4_q'+this.selecionada);
-		if(typeof resp == 'object')
+		if(typeof resp == 'object' && resp != null)
 			this.permuta.setPermuta(resp);
 		else
 			this.permuta.zera();
