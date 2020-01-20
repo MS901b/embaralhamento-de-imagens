@@ -1,5 +1,5 @@
 var window_loaded = false;
-var flash_loaded = false;
+var flash_loaded = true;
 var popup;
 
 Event.observe(window, 'load', function()

@@ -110,7 +110,7 @@ function montaCiclo(permut)
 	return ciclo;
 }
 
-// Verifica se é um ciclo (string ou ciclo)
+// Verifica se ï¿½ um ciclo (string ou ciclo)
 function is_ciclo(ciclo)
 {
 	if(typeof ciclo == 'object' && ciclo.length)
@@ -152,7 +152,7 @@ function stringPraCiclo(string)
 	return ciclos;
 }
 
-// Quantos passos o ciclo dá até voltar à posição inicial
+// Quantos passos o ciclo dï¿½ atï¿½ voltar ï¿½ posiï¿½ï¿½o inicial
 function comprimentoCiclo(ciclo)
 {
 	var len = [];
@@ -222,10 +222,10 @@ var Permutador = Class.create({
 	{
 		if(!Element.empty(onde_caiu))
 		{
-			// Quem tá na caixa onde ele caiu
+			// Quem tï¿½ na caixa onde ele caiu
 			var quem_ta = $(onde_caiu).down();
 			
-			// Qual é a caixa onde ele estava
+			// Qual ï¿½ a caixa onde ele estava
 			var onde_tava = quem.up();
 			
 			this.resposta[Number(quem_ta.id.substr(quem_ta.id.length-2,2))-1] = undefined;

@@ -7330,7 +7330,3 @@ function montaShimmer(pos)
 	return el;
 }
 
-function flashOnInit(applet)
-{
-	document.fire('flash:'+applet);
-}

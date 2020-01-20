@@ -1,5 +1,5 @@
 var window_loaded = false;
-var flash_loaded = false;
+var flash_loaded = true;
 
 Event.observe(window, 'load', function()
 {
@@ -115,7 +115,7 @@ var parte_3 = new (Class.create({
 		$('trava_embaralhamento').hide();
 		
 		var permuta_escolhida = $('SalvaLocal').Pega(nomeSoft, 'valor_inicial_a1p3');
-		if(typeof permuta_escolhida == 'object')
+		if(typeof permuta_escolhida == 'object' && permuta_escolhida != null)
 			if(this.permuta.setPermuta(permuta_escolhida))
 				this.set_inicial();
 	},
@@ -133,7 +133,7 @@ var parte_3 = new (Class.create({
 		}
 
 		
-		$('SalvaLocal').SalvaObjeto(nomeSoft, 'valor_inicial_a1p3', this.permuta.resposta);
+		$('SalvaLocal').Salva(nomeSoft, 'valor_inicial_a1p3', this.permuta.resposta);
 		
 		removeEsperando({Parte: 2, Questao:'parte3_q4', Item: 0}, '');
 		$('velatura_applet').hide();
