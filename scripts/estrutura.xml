@@ -4,6 +4,7 @@
 	
 	<!-- 1: 1a Atividade -->
 	<item>
+		<id>a1</id>
 		<tipo>atividade</tipo>
 		<rotulo>1</rotulo>
 		<nome>O que é uma permutação?</nome>
@@ -12,10 +13,12 @@
 			<coluna>1</coluna>
 			<altura>1</altura>
 		</posicao>
+		<estadoinicial>1</estadoinicial>
 	</item>
 	
 	<!-- 2: 2a Atividade -->
 	<item>
+		<id>a2</id>
 		<tipo>atividade</tipo>
 		<rotulo>2</rotulo>
 		<nome>Ciclos de uma permutação</nome>
@@ -25,12 +28,14 @@
 			<altura>-1</altura>
 		</posicao>
 		<ligacoes>
-			<com>1</com>
+			<com>a1</com>
 		</ligacoes>
+		<estadoinicial>1</estadoinicial>
 	</item>
 	
 	<!-- 3: 3a Atividade -->
 	<item>
+		<id>a3</id>
 		<tipo>atividade</tipo>
 		<rotulo>3</rotulo>
 		<nome>Como voltar à configuração original?</nome>
@@ -40,11 +45,13 @@
 			<altura>1</altura>
 		</posicao>
 		<ligacoes>
-			<com>2</com>
+			<com>a2</com>
 		</ligacoes>
+		<estadoinicial>1</estadoinicial>
 	</item>
 	
 	<item>
+		<id>d1</id>
 		<tipo>desafio</tipo>
 		<nome>Desafio</nome>
 		<descricao>Você é capaz de dizer quantos são os ciclos de um embaralhamento, sabendo, para isso, apenas o número mínimo de embaralhadas necessárias para que o a figura volte à posição original?</descricao>
@@ -53,8 +60,9 @@
 			<altura>-1</altura>
 		</posicao>
 		<ligacoes>
-			<com>3</com>
+			<com>a3</com>
 		</ligacoes>
+		<estadoinicial>1</estadoinicial>
 	</item>
 	
 	
