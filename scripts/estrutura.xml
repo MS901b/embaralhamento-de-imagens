@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<software nome="Embaralhamento">
+	<msgFinal>Parabéns, você completou as atividades deste software! Se quiser, tente resolver o desafio.</msgFinal>
+	
+	<!-- 1: 1a Atividade -->
+	<item>
+		<id>a1</id>
+		<tipo>atividade</tipo>
+		<rotulo>1</rotulo>
+		<nome>O que é uma permutação?</nome>
+		<descricao>Nesta atividade, você verá o que é uma permutação e poderá, inclusive, criar algumas para se familiarizar com o conceito.</descricao>
+		<posicao>
+			<coluna>1</coluna>
+			<altura>1</altura>
+		</posicao>
+		<estadoinicial>1</estadoinicial>
+	</item>
+	
+	<!-- 2: 2a Atividade -->
+	<item>
+		<id>a2</id>
+		<tipo>atividade</tipo>
+		<rotulo>2</rotulo>
+		<nome>Ciclos de uma permutação</nome>
+		<descricao>Nesta atividade, você aprenderá o que são os chamados “ciclos de uma permutação”. Este é um conceito muito importante para a conclusão a que você chegará neste software.</descricao>
+		<posicao>
+			<coluna>2</coluna>
+			<altura>-1</altura>
+		</posicao>
+		<ligacoes>
+			<com>a1</com>
+		</ligacoes>
+		<estadoinicial>1</estadoinicial>
+	</item>
+	
+	<!-- 3: 3a Atividade -->
+	<item>
+		<id>a3</id>
+		<tipo>atividade</tipo>
+		<rotulo>3</rotulo>
+		<nome>Como voltar à configuração original?</nome>
+		<descricao>Nesta atividade, você aprenderá a responder a questão principal deste software: qual é o número mínimo de permutações necessárias para que as peças retornem à configuração original?</descricao>
+		<posicao>
+			<coluna>3</coluna>
+			<altura>1</altura>
+		</posicao>
+		<ligacoes>
+			<com>a2</com>
+		</ligacoes>
+		<estadoinicial>1</estadoinicial>
+	</item>
+	
+	<item>
+		<id>d1</id>
+		<tipo>desafio</tipo>
+		<nome>Desafio</nome>
+		<descricao>Você é capaz de dizer quantos são os ciclos de um embaralhamento, sabendo, para isso, apenas o número mínimo de embaralhadas necessárias para que o a figura volte à posição original?</descricao>
+		<posicao>
+			<coluna>4</coluna>
+			<altura>-1</altura>
+		</posicao>
+		<ligacoes>
+			<com>a3</com>
+		</ligacoes>
+		<estadoinicial>1</estadoinicial>
+	</item>
+	
+	
+	
+	
+</software>
