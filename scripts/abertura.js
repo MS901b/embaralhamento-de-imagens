@@ -84,11 +84,11 @@ function analisaAmbiente()
 	}
 
 
-	if (!(BrowserDetect.browser=='Firefox' && BrowserDetect.version>=66))
+	if (!(BrowserDetect.browser=='Firefox' && BrowserDetect.version>=62))
 	{
-		if (!(BrowserDetect.browser=='Chrome' && BrowserDetect.version>=75))
+		if (!(BrowserDetect.browser=='Chrome' && BrowserDetect.version>=70))
 		{
-			var conteudo = '<p><strong>Erro de compatibilidade – Navegador</strong></p><p>O seu navegador não é compatível com este software, para usar este software você precisa ter um dos seguintes navegadores de internet: </p><p>1. Chrome 75+ (mais recomendado)<br />2. Firefox 66.0+';
+			var conteudo = '<p><strong>Erro de compatibilidade – Navegador</strong></p><p>O seu navegador não é compatível com este software, para usar este software você precisa ter um dos seguintes navegadores de internet: </p><p>1. Chrome 70+ (mais recomendado)<br />2. Firefox 65+';
 			conteudo += '<p style="float:right;"><a href="detect.html">Ver relatório de compatibilidade completo</a></p><br class="limpador" />';
 			conteudo += '<p><a id="fechar_desesperado" style="float:right; href="#">Fechar</a><a id="continuar_mesmo_assim" style="float:right; margin-right:10px;"" href="#">Continuar mesmo assim</a><a style="float:right; margin-right:10px;" href="https://www.google.com/chrome/">Instalar o Chrome</a></p><br class="limpador" />';
 			var tmp = new PopupDesesperados(conteudo, 20);
